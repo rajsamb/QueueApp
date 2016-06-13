@@ -47,13 +47,13 @@
                 </div>
                 <div class="panel-body">
 
-                    <table class="table table-bordered table-striped table-responsive">
+                    <table class="table table-condensed table-striped table-responsive">
                         <thead>
                             <th>#</th>
                             <th>Type</th>
                             <th>Name</th>
                             <th>Service</th>
-                            <th>Queued At</th>
+                            <th>Waiting Since</th>
                         </thead>
 
                         <tbody>
@@ -64,7 +64,14 @@
                                         <td>{{ $queue->customerTypes->name }}</td>
                                         <td>{{ (is_null($queue->customers)) ? "Ananymous" : $queue->customers->name }}</td>
                                         <td>{{ $queue->serviceTypes->name }}</td>
-                                        <td>{{ $queue->queued_at }}</td>
+                                        <td>
+                                            {{ \Carbon\Carbon::createFromTimeStamp(strtotime($queue->queued_at))->diffForHumans() }} on
+                                            <span class="help-block">
+                                                <small>
+                                                    {{ \Carbon\Carbon::parse($queue->queued_at) }}
+                                                </small>
+                                            </span>
+                                        </td>
                                     </tr>
 
                                 @endforeach
