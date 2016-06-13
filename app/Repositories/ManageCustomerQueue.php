@@ -79,8 +79,5 @@ class ManageCustomerQueue
         $this->customerQueue->queued_at = Carbon::now('Europe/London');
 
         $this->customerQueue->save();
-
-        $this->customers->name = $request->input('organisationName');
-        $this->customers->save();
     }
 }

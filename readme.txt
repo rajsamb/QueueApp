@@ -1,13 +1,13 @@
 I have choosen Laravel Framework for this project. I have done followng on this project:
 
-    -> Use Database Migration to create Customers, CustomerTypes, ServiceTypes and CustomerQueues Table
-    -> Define relationship between table in a Model.
-    -> Create a small database table seeder
-    -> Use view composer to fetch customer types and service types and make it avaliable in the view.
-    -> Organise the view under resources > views.
+    -> Used Database Migration to create Customers, CustomerTypes, ServiceTypes and CustomerQueues Table
+    -> Defined relationship between table in a Model.
+    -> Created a small database table seeder
+    -> Used view composer to fetch customer types and service types and make it avaliable in the view.
+    -> Organised the view under resources > views.
     -> Used composer to pull package (Form Builder: laravelcollective/html)
-    -> Use request class for basic validation.
-    -> Use Bootstrap for front end css. Use CDN Link
+    -> Used request class for basic validation.
+    -> Used Bootstrap for front end css. Used CDN Link
 
 I usually do the following for bigger project.
 
