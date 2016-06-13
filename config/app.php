@@ -159,6 +159,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Codecourse\Notify\NotifyServiceProvider::class,
 
     ],
 
@@ -208,6 +209,8 @@ return [
 
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'Notify' => Codecourse\Notify\Facades\Notify::class,
 
     ],
 

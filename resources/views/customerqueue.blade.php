@@ -12,6 +12,7 @@
                     <div class="col-md-12">
 
                         @include('partials.alerts.form-error')
+                        @include('partials.alerts.form-submission-msg')
 
                         <div class="form-group col-md-12">
 

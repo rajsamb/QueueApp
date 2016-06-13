@@ -26,7 +26,7 @@ class AddCitizenToQueueRequest extends Request
         return [
             'serviceType' => 'required|integer|min:1|exists:service_types,id',
             'customerType' => 'required|integer|min:1|exists:customer_types,id',
-            'title' => 'required',
+            'title' => 'required|in:Mr,Miss,Ms,Mrs,Sir,Dr,Lady',
             'name' => 'required|min:3|max:30',
             'surname' => 'required|min:3|max:30',
         ];

@@ -17,7 +17,21 @@
 
         <div class="form-group col-md-12">
             {!! Form::label('title', 'Title:') !!}
-            {!! Form::text('title', '', ['class' => 'form-control full-width']) !!}
+            <br>
+            {!! Form::select('title',
+                    [
+                        'Mr' => 'Mr',
+                        'Miss' => 'Miss',
+                        'Ms' => 'Ms',
+                        'Mrs' => 'Mrs',
+                        'Sir' => 'Sir',
+                        'Dr' => 'Dr',
+                        'Lady' => 'Lady',
+                    ],
+                    'Mr',
+                    ['class' => 'form-control full-width']
+                )
+            !!}
         </div>
 
         <div class="form-group col-md-12">

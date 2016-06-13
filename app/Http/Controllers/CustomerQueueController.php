@@ -47,6 +47,8 @@ class CustomerQueueController extends Controller
     {
         $this->manageCustomerQueue->addCitizenToQueue($request);
 
+        notify()->flash($request->input('name') . " Successfully Added to the queue!", "success", ['icon' => "check"]);
+
         return Redirect::back();
     }
 
@@ -59,6 +61,8 @@ class CustomerQueueController extends Controller
     {
         $this->manageCustomerQueue->addOrganisationToQueue($request);
 
+        notify()->flash($request->input('organisationName') . " Successfully Added to the Queue!", "success", ['icon' => "check"]);
+
         return Redirect::back();
     }
 
@@ -70,6 +74,8 @@ class CustomerQueueController extends Controller
     public function addAnonymousToQueue(AddAnonymousToQueueRequest $request)
     {
         $this->manageCustomerQueue->addAnonymousToQueue($request);
+
+        notify()->flash("Successfully Added!", "success", ['icon' => "check"]);
 
         return Redirect::back();
     }
