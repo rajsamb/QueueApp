@@ -20,7 +20,7 @@ class CustomerQueuesTableSeeder extends Seeder
                 'customers_id' => 1,
                 'customer_types_id' => 1,
                 'service_types_id' => 2,
-                'queued_at' => Carbon::now('Europe/London')->subMinute(5)
+                'queued_at' => Carbon::now('Europe/London')->subMinute(10)
             ]
         );
 
@@ -29,7 +29,7 @@ class CustomerQueuesTableSeeder extends Seeder
                 'customers_id' => null,
                 'customer_types_id' => 3,
                 'service_types_id' => 2,
-                'queued_at' => Carbon::now('Europe/London')->subMinute(2)
+                'queued_at' => Carbon::now('Europe/London')->subMinute(8)
             ]
         );
 
@@ -38,6 +38,33 @@ class CustomerQueuesTableSeeder extends Seeder
                 'customers_id' => 2,
                 'customer_types_id' => 2,
                 'service_types_id' => 4,
+                'queued_at' => Carbon::now('Europe/London')->subMinute(5)
+            ]
+        );
+
+        CustomerQueue::create(
+            [
+                'customers_id' => 3,
+                'customer_types_id' => 1,
+                'service_types_id' => 3,
+                'queued_at' => Carbon::now('Europe/London')->subMinute(2)
+            ]
+        );
+
+        CustomerQueue::create(
+            [
+                'customers_id' => 4,
+                'customer_types_id' => 1,
+                'service_types_id' => 5,
+                'queued_at' => Carbon::now('Europe/London')->subMinute(1)
+            ]
+        );
+
+        CustomerQueue::create(
+            [
+                'customers_id' => null,
+                'customer_types_id' => 3,
+                'service_types_id' => 5,
                 'queued_at' => Carbon::now('Europe/London')
             ]
         );

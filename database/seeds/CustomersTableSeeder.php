@@ -29,5 +29,21 @@ class CustomersTableSeeder extends Seeder
                 'surname' => '',
             ]
         );
+
+        Customers::create(
+            [
+                'title' =>  'Miss',
+                'name' =>  'Marta',
+                'surname' => 'Singh',
+            ]
+        );
+
+        Customers::create(
+            [
+                'title' =>  'Dr',
+                'name' =>  'David',
+                'surname' => 'Bellido',
+            ]
+        );
     }
 }

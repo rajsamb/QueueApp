@@ -65,7 +65,7 @@
                                         <td>{{ (is_null($queue->customers)) ? "Ananymous" : $queue->customers->name }}</td>
                                         <td>{{ $queue->serviceTypes->name }}</td>
                                         <td>
-                                            {{ \Carbon\Carbon::createFromTimeStamp(strtotime($queue->queued_at))->diffForHumans() }} on
+                                            {{ \Carbon\Carbon::parse($queue->queued_at, 'Europe/London')->diffForHumans() }} on
                                             <span class="help-block">
                                                 <small>
                                                     {{ \Carbon\Carbon::parse($queue->queued_at) }}
