@@ -9,6 +9,7 @@ use App\CustomerQueue;
 class ManageCustomerQueue
 {
     protected $customerQueue;
+
     protected $customers;
 
     public function __construct(CustomerQueue $customerQueue, Customers $customers)
@@ -19,6 +20,8 @@ class ManageCustomerQueue
 
     /**
      * Get the customer queue and paginate.
+     *
+     * @return Collection
      */
     public function getPaginated($howMany = 5)
     {
@@ -30,9 +33,7 @@ class ManageCustomerQueue
     /**
      * Add The Citizen the to Queue.
      *
-     * ToDo: Inplement a transaction to rollback if
-     * saving organisation to the customer table
-     * fails
+     * @return void
      */
     public function addCitizenToQueue($request)
     {
@@ -55,13 +56,10 @@ class ManageCustomerQueue
     /**
      * Add The Organisation the to Queue.
      *
-     * ToDo: Inplement a transaction to rollback if
-     * saving organisation to the customer table
-     * fails
+     * @return void
      */
     public function addOrganisationToQueue($request)
     {
-
         $this->customer = $this->customers->firstOrCreate(['name' => $request->input('organisationName')]);
 
         $this->customerQueue->customers_id = $this->customer->id;
@@ -72,6 +70,11 @@ class ManageCustomerQueue
         $this->customerQueue->save();
     }
 
+    /**
+     * Add Ananymous Customer to the Queue.
+     *
+     * @return void
+     */
     public function addAnonymousToQueue($request)
     {
         $this->customerQueue->customer_types_id = $request->input('customerType');

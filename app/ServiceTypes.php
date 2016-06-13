@@ -10,6 +10,12 @@ class ServiceTypes extends Model
 
     protected $guarded = ['id','created_at','updated_at'];
 
+    /**
+     * A queue can have multiple instance of a
+     * service type
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function queue()
     {
         return $this->hasMany(CustomerQueue::class);

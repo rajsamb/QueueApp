@@ -11,16 +11,31 @@ class CustomerQueue extends Model
 
     protected $guarded = ['id','created_at','updated_at'];
 
+    /**
+     * A Queue can belong to one customer.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function customers()
     {
         return $this->belongsTo(Customers::class);
     }
 
+    /**
+     * A Queue can belong to one ServiceTypes.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function serviceTypes()
     {
         return $this->belongsTo(ServiceTypes::class);
     }
 
+    /**
+     * A Queue can belong to one customer types
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function customerTypes()
     {
         return $this->belongsTo(CustomerTypes::class);
@@ -34,7 +49,7 @@ class CustomerQueue extends Model
      */
     public function setCustomersIdAttribute($value)
     {
-        $value = ($value) ? : NULL;
+        $value = ($value) ? : null;
         $this->attributes['customers_id'] = $value;
     }
 

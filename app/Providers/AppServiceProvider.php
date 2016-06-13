@@ -31,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Make Service Type avaliable to all the views.
+     *
+     * @return void
      */
     private function composeServiceTypes()
     {
@@ -39,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
 
     /**
      * Make Service Type avaliable to all the views.
+     *
+     * @return void
      */
     private function composeCustomerTypes()
     {

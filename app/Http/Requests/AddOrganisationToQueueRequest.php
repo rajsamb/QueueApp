@@ -30,6 +30,11 @@ class AddOrganisationToQueueRequest extends Request
         ];
     }
 
+    /**
+     * Customize the validation message.
+     *
+     * @return array
+     */
     public function messages()
     {
         return [

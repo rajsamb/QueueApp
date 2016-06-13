@@ -8,6 +8,7 @@ I have choosen Laravel Framework for this project. I have done followng on this 
     -> Used composer to pull package (Form Builder: laravelcollective/html)
     -> Used request class for basic validation.
     -> Used Bootstrap for front end css. Used CDN Link
+    -> user PSR-2 Coding Standard
 
 I usually do the following for bigger project.
 
@@ -16,6 +17,7 @@ I usually do the following for bigger project.
     -> Use gulp and elixer to compile css and js.
 
 To Run the Project:
+------------------------
 
 1. create .env file
     APP_ENV=local

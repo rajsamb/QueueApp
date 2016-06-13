@@ -15,7 +15,7 @@ use App\Http\Requests\AddOrganisationToQueueRequest;
 class CustomerQueueController extends Controller
 {
     /**
-     * Instance of Manage Customer Queue Repository
+     * Instance of Manage Customer Queue Repository.
      *
      * @var App\Repositories\ManageCustomerQueue
      */
@@ -39,7 +39,7 @@ class CustomerQueueController extends Controller
     }
 
     /**
-     * Store a Citizen to a Queue
+     * Store a Citizen to a Queue.
      *
      * @return \Illuminate\Http\Response
      */
@@ -53,7 +53,7 @@ class CustomerQueueController extends Controller
     }
 
     /**
-     * Store a Organisation to a Queue
+     * Store a Organisation to a Queue.
      *
      * @return \Illuminate\Http\Response
      */
@@ -67,7 +67,7 @@ class CustomerQueueController extends Controller
     }
 
     /**
-     * Store a Anonymous to a Queue
+     * Store a Anonymous to a Queue.
      *
      * @return \Illuminate\Http\Response
      */
@@ -79,6 +79,4 @@ class CustomerQueueController extends Controller
 
         return Redirect::back();
     }
-
-
 }
