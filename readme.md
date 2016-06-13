@@ -1,27 +1,43 @@
-# Laravel PHP Framework
+I have choosen Laravel Framework for this project. I have done followng on this project:
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+    -> Use Database Migration to create Customers, CustomerTypes, ServiceTypes and CustomerQueues Table
+    -> Define relationship between table in a Model.
+    -> Create a small database table seeder
+    -> Use view composer to fetch customer types and service types and make it avaliable in the view.
+    -> Organise the view under resources > views.
+    -> Used composer to pull package (Form Builder: laravelcollective/html)
+    -> Use request class for basic validation.
+    -> Use Bootstrap for front end css. Use CDN Link
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+I usually do the following for bigger project.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+    -> Use bower to manage front end dependencies
+    -> Use Sass CSS Framework and put them in resources > assets folder. I don't have huge experience using sass but learning and implementing on the project at my current Job.
+    -> Use gulp and elixer to compile css and js.
 
-## Official Documentation
+To Run the Project:
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+1. create .env file
+    APP_ENV=local
+    APP_KEY=base64:0xHxFU/eUDj7teZpveWbbOzJu7scfkvA0m1huea0fX0=
+    APP_DEBUG=true
+    APP_LOG_LEVEL=debug
+    APP_URL=http://localhost
 
-## Contributing
+    DB_CONNECTION=queue_app
+    DB_HOST=localhost
+    DB_PORT=3306
+    DB_DATABASE=queue_app
+    DB_USERNAME=your_database_username
+    DB_PASSWORD=your_database_password
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+    Note:
+    a) May need to generate app key by running php artisan key:generate and specifying it in APP_KEY
+    b) create databse queue_app
+    c) Specify the usename and password on DB_USERNAME and DB_PASSWORD respectively
 
-## Security Vulnerabilities
+2. Run a database migration
+-> php artisan migrate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+3. Seed database
+-> php artisan db:seed

@@ -17,6 +17,9 @@ class ManageCustomerQueue
         $this->customers = $customers;
     }
 
+    /**
+     * Get the customer queue and paginate.
+     */
     public function getPaginated($howMany = 5)
     {
         return $this->customerQueue

@@ -14,13 +14,17 @@ use App\Http\Requests\AddOrganisationToQueueRequest;
 
 class CustomerQueueController extends Controller
 {
+    /**
+     * Instance of Manage Customer Queue Repository
+     *
+     * @var App\Repositories\ManageCustomerQueue
+     */
     protected $manageCustomerQueue;
 
     public function __construct(ManageCustomerQueue $manageCustomerQueue)
     {
         $this->manageCustomerQueue = $manageCustomerQueue;
     }
-
 
     /**
      * Display a listing of the resource.
@@ -29,14 +33,8 @@ class CustomerQueueController extends Controller
      */
     public function index()
     {
-        // return ServiceTypes::whereId(2)->firstOrFail()->queue()->get();
-        // return ServiceTypes::all();
-        // return CustomerQueue::all();
-        // dd('You are at index file');
-
-        // dd(\Carbon\Carbon::now('Europe/London'));
-
         $queues = $this->manageCustomerQueue->getPaginated();
+
         return view('customerqueue', compact('queues'));
     }
 
@@ -76,59 +74,5 @@ class CustomerQueueController extends Controller
         return Redirect::back();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
